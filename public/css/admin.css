@@ -1,0 +1,15 @@
+.skin-blue-light .main-header nav.navbar {
+    background-color: black ;
+}
+
+.skin-blue-light .main-header a.logo {
+    background-color: black;
+}
+
+.skin-blue-light .main-header a.logo:hover {
+    background-color: #222;
+}
+
+.skin-blue-light .main-header .navbar a.sidebar-toggle:hover {
+    background-color: #222;
+}
