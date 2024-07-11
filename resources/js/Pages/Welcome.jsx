@@ -25,9 +25,9 @@ export default function Welcome() {
             <Item image={"/Art/Warrior_Cathedral.jpg"} title="Home" link={'/home'} logo isHome />
             <Item image={"/Art/07.png"} title="Log In" link={'/login'} />
             <Item image={"/Art/10.png"} title="Games" link={'/games'} />
-            <Item image={"/Art/nightblade_study2.jpg"} title="News and Features" link={'/news'} />
-            <Item image={"/Art/06.png"} title="About Us" link={'/about-us'} />
             <Item image={"/Art/Wizard%20Steam.png"} title="Creatives" link={'/creatives'} />
+            <Item image={"/Art/06.png"} title="About Us" link={'/about-us'} />
+            <Item image={"/Art/nightblade_study2.jpg"} title="News and Features" link={'/news'} />
             <Item image={"/Art/08.png"} title="Contact Us" link={'/contact'} />
             <Item image={"/Art/09.png"} title="Internship" link={'/internship'} />
         </div>

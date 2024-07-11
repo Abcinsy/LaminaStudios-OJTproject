@@ -17,6 +17,7 @@
         "vite": "^4.5.3"
     },
     "dependencies": {
+        "@tailwindcss/aspect-ratio": "^0.4.2",
         "tw-elements": "^1.0.0-beta2"
     }
 }

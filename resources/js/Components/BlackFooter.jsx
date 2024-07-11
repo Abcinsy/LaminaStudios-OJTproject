@@ -120,17 +120,14 @@ const BlackFooter = () => {
         </div>
 
 
-
-        <a href="#" className='text-white text-center px-5 py-4 mx-10 uppercase text-base font-bold rounded-full bg-gray-500 '> Terms and Conditions </a>
-
-        <a href="#" className='text-white text-center px-5 py-4 mx-10 uppercase text-base font-bold rounded-full bg-gray-500 '> Privacy Statement</a>
-
-
-        <p className="text-white  py-4  text-center text-lg uppercase font-semibold ">© 2022 Lamina Studios, LLC. All Rights Reserved.</p>
-
-
-
-
+        <div>
+            <a href="#" className='text-white text-center px-5 py-4 mx-10 uppercase text-base font-bold rounded-full bg-gray-500 '> Terms and Conditions </a>
+            <a href="#" className='text-white text-center px-5 py-4 mx-10 uppercase text-base font-bold rounded-full bg-gray-500 '> Privacy Statement</a>
+        </div>
+        
+        <div>
+            <p className="text-white  py-4  text-center text-lg uppercase font-semibold ">© 2022 Lamina Studios, LLC. All Rights Reserved.</p>
+        </div>
 
     </div>
 

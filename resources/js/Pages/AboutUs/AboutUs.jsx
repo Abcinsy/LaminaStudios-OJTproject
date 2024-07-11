@@ -3,7 +3,7 @@ import Initiatives from "./Partials/Initiatives";
 
 export default function AboutUs() {
     return (
-        <SiteLayout title={'About Us'} backgroundImage={'Art/10.png'}>
+        <SiteLayout title={'About Us'} backgroundImage={'Art/06.png'}>
                 <div className="flex flex-col lg:px-16 md:px-10 relative overflow-x-clip">
                     <div className="flex md:flex-row flex-col">
                         <div className="flex flex-col basis-1/2 items-center w-full md:w-1/2 ">

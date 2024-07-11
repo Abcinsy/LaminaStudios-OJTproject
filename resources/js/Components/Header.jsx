@@ -12,6 +12,7 @@ const Header = () => {
         {id: 3, name:"Creatives", link:"/creatives"},
         {id: 4, name:"News and Features", link:"/news"},
         {id: 5, name:"Contact Us", link:"/contact-us"},
+        {id: 6, name:"Internship", link:"/internship"}
 
     ];
     let [open, setOpen]= useState(false);
@@ -48,12 +49,12 @@ const Header = () => {
 
             </div>
 
-            <ul className={`lg:flex lg:flex-row  gap-5 xl:gap-20  lg:static lg:pb-0 mt-3 pb-12 lg:z-auto z-[-1] left-0 lg:w-auto w-full transition-all  ${open ? 'left-0 ': 'hidden absolute'} `}>
+            <ul className={`lg:flex lg:flex-row  gap-5 xl:gap-5  lg:static lg:pb-0 mt-3 pb-12 lg:z-auto z-[-1] left-0 lg:w-auto w-full transition-all  ${open ? 'left-0 ': 'hidden absolute'} `}>
 
                 {
                     Links.map((link)=>(
                         <li className='my-10'>
-                            <Link href={link.link} className="px-6 py-4 rounded-full bg-gray-600 hover:bg-gray-400 active:bg-gray-900 cursor-pointer ">{link.name}</Link>
+                            <Link href={link.link} className="px-6 py-4 rounded-full hover:text-lamina-yellow active:bg-gray-900 cursor-pointer ">{link.name}</Link>
                         </li>
                     )
                     )

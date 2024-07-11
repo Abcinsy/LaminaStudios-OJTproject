@@ -42,7 +42,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
-    //diretso sa route na render
+    // diretso sa route na render
     // Route::get('/about', function () {
     //     return Inertia::render('About', [
     //         'data' => 'whatever data'
@@ -57,6 +57,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/games', 'GameController@index')->name('games');
     Route::inertia('/about-us', 'AboutUs/AboutUs');
     Route::inertia('/contact-us', 'Contact')->name('contact-us');
+    Route::inertia('/internship', 'Internship/Internship');
     Route::post('/contact-us', 'MessageController@store');
     Route::inertia('/games/dungeonsouls', 'Games/DungeonSouls');
     Route::inertia('/games/badbotsrise', 'Games/BadBotsRise');
