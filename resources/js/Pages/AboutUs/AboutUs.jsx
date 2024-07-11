@@ -19,7 +19,7 @@ export default function AboutUs() {
                             </div>
                         </div>
                         <div className="basis-1/2 font-semibold">
-                            <p className="text-lg text-white text-center pb-4 md:px-0 px-16 text-justify">
+                            <p className="text-lg text-white text-center pb-4 md:px-0 px-16">
                                 Lamina Studios was founded in January 2016 when
                                 the development of Dungeon Souls was in
                                 transition of October 2015. The studio continued
@@ -31,7 +31,7 @@ export default function AboutUs() {
                                 Artist) and with many other collaborators from
                                 all over the world,
                             </p>
-                            <p className="text-lg text-white text-center pb-4 md:px-0 px-16 text-justify">
+                            <p className="text-lg text-white text-center pb-4 md:px-0 px-16">
                                 Lamina Studios' logo was designed by Paul
                                 Benedict Galvez, a De La Salle University
                                 Digital and Multimedia Arts student from the
@@ -43,7 +43,7 @@ export default function AboutUs() {
                                 the team members result to a more productive and
                                 successful projects:
                             </p>
-                            <p className="text-lg text-white text-center pb-4 md:px-0 px-16 text-justify">
+                            <p className="text-lg text-white text-center pb-4 md:px-0 px-16">
                                 Dungeon Souls is the first indie game developed
                                 by Lamina Studios. While the game development
                                 continues, more features were added to the game
@@ -57,7 +57,7 @@ export default function AboutUs() {
                                 story and the final Boss scenes were added
                                 features in the final stage.
                             </p>
-                            <p className="text-lg text-white text-center pb-4 md:px-0 px-16 text-justify">
+                            <p className="text-lg text-white text-center pb-4 md:px-0 px-16">
                                 In December. 2, 2016, Dungeon Souls final build
                                 was released and to this day, development
                                 continues with UX/UI redesign, improvement of

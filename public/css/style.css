@@ -1,5 +1,15 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Oswald:wght@200..700&display=swap');
+
+
+h1, h2, h3{
+    font-family: 'Oswald', sans-serif;
+}
+
+h4, h5, h6, p, a, div {
+    font-family: 'Manrope', sans-serif;
+}
 
 #navbar{
     transition: 0.4s;
@@ -51,6 +61,44 @@ a {
 .img-devs:hover {
     transform: scale(1.05);
     transition: all 0.3s ease-in-out;
+}
+
+.offwhite {
+    color: #F9F5EE;
+}
+
+.black {
+    color: #212020;
+}
+
+.grayblack {
+    color: #2B2925;
+}
+
+/* Background color variants */
+.bg-offwhite {
+    background-color: #F9F5EE;
+}
+
+.bg-black {
+    background-color: #212020;
+}
+
+.bg-grayblack {
+    background-color: #2B2925;
+}
+
+/* Border color variants */
+.border-offwhite {
+    border-color: #F9F5EE;
+}
+
+.border-black {
+    border-color: #212020;
+}
+
+.border-grayblack {
+    border-color: #2B2925;
 }
 
 
