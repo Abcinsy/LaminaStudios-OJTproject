@@ -1,0 +1,30 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore environment-specific configuration files
+.env
+.env.*
+
+# Ignore Composer's vendor directory
+vendor/
+
+# Ignore Laravel storage logs and debugbar
+storage/*.log
+storage/debugbar/
+
+# Ignore Laravel cached files
+bootstrap/cache/
+
+# Ignore IDE/Editor specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore backup and archive files
+*.zip
+*.gz
