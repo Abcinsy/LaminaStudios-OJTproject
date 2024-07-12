@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 
-## [2.1.0] - 2024-07-11
+## [2.0.0] - 2024-07-11
 ### Added
 - Added login and internship on the the welcome page
 - Created the internship page
@@ -17,11 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Changed
 - Updated the footer ui
 - Updated the navbar
-- Updated php and vite version
-
-
-## [2.0.0] - 2024-06-11
-### Changed
+- Updated versions
 - Log In UI
 
 ### Fixed
