@@ -1,0 +1,33 @@
+{
+  "_tw-elements.es.min-8ab31ca5.js": {
+    "file": "assets/tw-elements.es.min-8ab31ca5.js"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-33e99237.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-1939a981.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-afa9bc21.js",
+    "imports": [
+      "_tw-elements.es.min-8ab31ca5.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/js/app.jsx": {
+    "css": [
+      "assets/app-1939a981.css"
+    ],
+    "file": "assets/app-22e2c5e6.js",
+    "imports": [
+      "_tw-elements.es.min-8ab31ca5.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/app.jsx"
+  }
+}

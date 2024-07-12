@@ -11,6 +11,11 @@ module.exports = {
       extend: {
         colors: {
             'lamina-yellow': '#fec200',
+            'black' : '#212020',
+            'brown' : '#2B2925',
+            'slate' : '#2B2925',
+            'lime' : '#F3C649',
+
         }
       },
   },

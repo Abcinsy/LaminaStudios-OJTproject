@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Head } from "@inertiajs/react";
+import { Inertia } from "@inertiajs/inertia";
 import "../../css/auth-forms.css";
 
 export default function Login({ csrf_token, errors }) {
@@ -8,6 +9,7 @@ export default function Login({ csrf_token, errors }) {
         password: errors.password ? errors.password : "",
         remember: errors.remember ? errors.remember : false,
     });
+    const [formErrors, setFormErrors] = useState({});
 
     const handleChange = (e) => {
         const key = e.target.id;
@@ -25,20 +27,35 @@ export default function Login({ csrf_token, errors }) {
         }));
     };
 
+    const validateForm = () => {
+        let errors = {};
+        if (!form.username) errors.username = "Username is required";
+        if (!form.password) errors.password = "Password is required";
+        setFormErrors(errors);
+        return Object.keys(errors).length === 0;
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (validateForm()) {
+            Inertia.post('/admin/auth/login', form);
+        }
+    };
+
+    const redirectToRegister = (e) => {
+        e.preventDefault();
+        Inertia.get('/register');
+    };
+
     return (
         <div
             className="flex flex-col w-full h-screen bg-cover bg-bottom"
-            style={{ backgroundImage: "url(../../Art/Warrior_Cathedral.jpg" }}
+            style={{ backgroundImage: "url(../../Art/Warrior_Cathedral.jpg)" }}
         >
             <Head title="Login" />
             <div className="flex flex-row basis-full">
                 <div className="md:flex flex-col lg:w-2/3 md:w-1/2 hidden">
                     <div className="min-h-fit backdrop-brightness-50">
-                        <img
-                            src="/images/lamina_logo_yellow.png"
-                            alt="Lamina Studios Logo"
-                            className="w-28 m-4 ml-8"
-                        />
                     </div>
                     <div className="flex basis-full justify-center items-center backdrop-brightness-75">
                         <p className="text-white lg:text-7xl text-6xl text-center drop-shadow">
@@ -48,17 +65,18 @@ export default function Login({ csrf_token, errors }) {
                     </div>
                 </div>
 
-                <div className="flex flex-col lg:w-1/3 md:w-1/2 w-full sm:mx-36 md:mx-0 bg-slate-100 gap-8 pt-12">
+                <div className="flex flex-col lg:w-1/3 md:w-1/2 w-full sm:mx-36 md:mx-0 bg-brown gap-8 pt-12">
                     <img
-                        src="/images/LS_newlogo.png"
+                        src="/Art/lamina-logo.png"
                         alt="Lamina Studios Logo"
-                        className="w-28 self-center"
+                        className="w-28 align-left pl-4 pb-0"
                     />
-                    <p className="self-center text-xl font-bold mb-8">Login</p>
+                    <p className="ml-4 mt-2 align-text-right text-xl font-bold  text-yellow-500">Login to your Account</p>
                     <form
                         method="post"
                         action="/admin/auth/login"
                         className="self-center max-w-full w-full px-8"
+                        onSubmit={handleSubmit}
                     >
                         <input type="hidden" name="_token" value={csrf_token} />
                         <div className="relative z-0 w-full mb-8">
@@ -80,6 +98,11 @@ export default function Login({ csrf_token, errors }) {
                             >
                                 Username
                             </label>
+                            {formErrors.username && (
+                                <div className="text-red-500 text-sm mt-2">
+                                    {formErrors.username}
+                                </div>
+                            )}
                         </div>
                         <div className="relative z-0 w-full mb-8">
                             <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -100,6 +123,11 @@ export default function Login({ csrf_token, errors }) {
                             >
                                 Password
                             </label>
+                            {formErrors.password && (
+                                <div className="text-red-500 text-sm mt-2">
+                                    {formErrors.password}
+                                </div>
+                            )}
                         </div>
                         <label>
                             <input
@@ -110,10 +138,15 @@ export default function Login({ csrf_token, errors }) {
                                 checked={form.remember}
                                 onChange={handleCheck}
                             />
-                            Remember me
+                           <span className="text-white"> Remember me</span>
                         </label>
-                        <div className="flex flex-row justify-center mt-16">
-                            <button className="bg-amber-500 rounded-xl px-8 py-1 drop-shadow-lg uppercase font-bold text-gray-800">
+                        <div className="text-center mt-4">
+                            <a href="#" className="text-amber-500 hover:underline" onClick={redirectToRegister}>
+                                Don't have an account? Register here
+                            </a>
+                        </div>
+                        <div className="flex flex-row justify-center mt-8">
+                            <button className="bg-amber-500 rounded-xl px-20 py-1 drop-shadow-lg uppercase font-bold text-gray-800">
                                 Login
                             </button>
                         </div>
