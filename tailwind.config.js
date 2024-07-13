@@ -18,6 +18,11 @@ module.exports = {
 
         }
       },
+      fontFamily: {
+        'display': ['Oswald'],
+        'sans' : ['Manrope Regular'],
   },
+},
+
   plugins: [require("tw-elements/dist/plugin")]
-  }
+}
