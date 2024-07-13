@@ -55,13 +55,14 @@ export default function Login({ csrf_token, errors }) {
             <Head title="Login" />
             <div className="flex flex-row basis-full">
                 <div className="md:flex flex-col lg:w-2/3 md:w-1/2 hidden">
-                    <div className="min-h-fit backdrop-brightness-50">
-                    </div>
+                    <div className="min-h-fit backdrop-brightness-50"></div>
                     <div className="flex basis-full justify-center items-center backdrop-brightness-75">
-                        <p className="text-white lg:text-7xl text-6xl text-center drop-shadow">
-                            Welcome to the{" "}
-                            <span className="font-bold">Admin Panel</span>
-                        </p>
+                        <div className="bg-gray-950 bg-opacity-50 p-5 rounded-lg">
+                            <p className="text-neutral-50 lg:text-7xl font-bold text-6xl text-center drop-shadow font-sans">
+                                Welcome to the{" "}
+                                <span className="font-bold font-sans">Admin Panel</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -71,7 +72,9 @@ export default function Login({ csrf_token, errors }) {
                         alt="Lamina Studios Logo"
                         className="w-28 align-left pl-4 pb-0"
                     />
-                    <p className="ml-4 mt-2 align-text-right text-xl font-bold  text-yellow-500">Login to your Account</p>
+                    <p className="ml-4 mt-2 align-text-right text-xl font-bold font-display text-yellow-500">
+                        Login to your Account
+                    </p>
                     <form
                         method="post"
                         action="/admin/auth/login"
@@ -87,14 +90,14 @@ export default function Login({ csrf_token, errors }) {
                                 type="text"
                                 id="username"
                                 name="username"
-                                className="block py-2.5 px-0 pl-8 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
+                                className="font-sans block py-2.5 px-0 pl-8 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
                                 placeholder=" "
                                 value={form.username}
                                 onChange={handleChange}
                             />
                             <label
                                 htmlFor="username"
-                                className="absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 top-3 left-0 -z-10 origin-[0] peer-placeholder-shown:left-8 peer-focus:left-0 peer-focus:text-amber-600 peer-focus:dark:text-amber-500 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
+                                className="font-sans absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 top-3 left-0 -z-10 origin-[0] peer-placeholder-shown:left-8 peer-focus:left-0 peer-focus:text-amber-600 peer-focus:dark:text-amber-500 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
                             >
                                 Username
                             </label>
@@ -112,14 +115,14 @@ export default function Login({ csrf_token, errors }) {
                                 type="password"
                                 id="password"
                                 name="password"
-                                className="block py-2.5 px-0 pl-8 w-full text-lg text-gray-900 bg-transparent autofill:bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
+                                className="font-sans block py-2.5 px-0 pl-8 w-full text-lg text-gray-900 bg-transparent autofill:bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
                                 placeholder=" "
                                 value={form.password}
                                 onChange={handleChange}
                             />
                             <label
                                 htmlFor="password"
-                                className="absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 top-3 left-0 -z-10 origin-[0] peer-placeholder-shown:left-8 peer-focus:left-0 peer-focus:text-amber-600 peer-focus:dark:text-amber-500 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
+                                className="font-sans absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 top-3 left-0 -z-10 origin-[0] peer-placeholder-shown:left-8 peer-focus:left-0 peer-focus:text-amber-600 peer-focus:dark:text-amber-500 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
                             >
                                 Password
                             </label>
@@ -138,15 +141,15 @@ export default function Login({ csrf_token, errors }) {
                                 checked={form.remember}
                                 onChange={handleCheck}
                             />
-                           <span className="text-white"> Remember me</span>
+                            <span className="text-white font-sans"> Remember me</span>
                         </label>
                         <div className="text-center mt-4">
-                            <a href="#" className="text-amber-500 hover:underline" onClick={redirectToRegister}>
+                            <a href="#" className="text-amber-500 hover:underline font-sans" onClick={redirectToRegister}>
                                 Don't have an account? Register here
                             </a>
                         </div>
                         <div className="flex flex-row justify-center mt-8">
-                            <button className="bg-amber-500 rounded-xl px-20 py-1 drop-shadow-lg uppercase font-bold text-gray-800">
+                            <button className="bg-amber-500 rounded-xl px-20 py-1 drop-shadow-lg uppercase font-bold text-gray-800 font-display">
                                 Login
                             </button>
                         </div>
