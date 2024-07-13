@@ -57,7 +57,7 @@ export default function Register({ csrf_token, errors }) {
                         alt="Lamina Studios Logo"
                         className="w-28 align-left pl-4 pb-0"
                     />
-                    <p className="text-left ml-4 text-xl text-yellow-500 font-bold mb-0 mt-0 pb-0">Sign Up for an Account</p>
+                    <p className="font-display text-left ml-4 text-xl text-yellow-500 font-bold mb-0 mt-0 pb-0">Sign Up for an Account</p>
                     <form
                         method="post"
                         action="/register"
@@ -66,13 +66,13 @@ export default function Register({ csrf_token, errors }) {
                     >
                         <input type="hidden" name="_token" value={csrf_token} />
                         <div className="mb-2">
-                            <label className="block text-white text-sm font-bold mb-2" htmlFor="username">
+                            <label className="block text-white text-sm font-bold mb-2 font-sans" htmlFor="username">
                                 Username
                             </label>
                             <input
                                 id="username"
                                 type="text"
-                                className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                                className="font-sans shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
                                 placeholder="Username"
                                 value={form.username}
                                 onChange={handleChange}
@@ -82,13 +82,13 @@ export default function Register({ csrf_token, errors }) {
                             )}
                         </div>
                         <div className="mb-2">
-                            <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
+                            <label className="block text-white text-sm font-bold mb-2 font-sans" htmlFor="email">
                                 Email
                             </label>
                             <input
                                 id="email"
                                 type="email"
-                                className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                                className="font-sans shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
                                 placeholder="Email"
                                 value={form.email}
                                 onChange={handleChange}
@@ -98,13 +98,13 @@ export default function Register({ csrf_token, errors }) {
                             )}
                         </div>
                         <div className="mb-2">
-                            <label className="block text-white text-sm font-bold mb-2" htmlFor="password">
+                            <label className="block text-white text-sm font-bold mb-2 font-sans" htmlFor="password">
                                 Password
                             </label>
                             <input
                                 id="password"
                                 type="password"
-                                className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                                className="font-sans shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
                                 placeholder="Password"
                                 value={form.password}
                                 onChange={handleChange}
@@ -114,13 +114,13 @@ export default function Register({ csrf_token, errors }) {
                             )}
                         </div>
                         <div className="mb-4">
-                            <label className="block text-white text-sm font-bold mb-2" htmlFor="password_confirmation">
+                            <label className="block text-white text-sm font-bold mb-2 font-sans" htmlFor="password_confirmation">
                                 Confirm Password
                             </label>
                             <input
                                 id="password_confirmation"
                                 type="password"
-                                className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                                className="font-sans shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
                                 placeholder="Confirm Password"
                                 value={form.password_confirmation}
                                 onChange={handleChange}
@@ -131,7 +131,7 @@ export default function Register({ csrf_token, errors }) {
                         </div>
                         <div className="flex items-center justify-between">
                             <button
-                                className="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline"
+                                className="bg-amber-500 hover:bg-amber-700 text-white font-display font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline"
                                 type="submit"
                             >
                                 Register
@@ -140,23 +140,14 @@ export default function Register({ csrf_token, errors }) {
                         {errors.error && (
                             <div className="text-red-500 text-xs mt-2">{errors.error}</div>
                         )}
-                        <div className="text-left text-sm mt-4">
-                            <Link href="/login" className="text-amber-500 hover:underline">
+                        <div className="text-left text-sm mt-4 ">
+                            <Link href="/login" className="text-amber-500 hover:underline font-sans">
                                 Already have an account? Login here
                             </Link>
                         </div>
                     </form>
                 </div>
-                <div className="flex flex-col lg:w-2/3 md:w-1/2 hidden">
-                    <div className="min-h-fit backdrop-brightness-50">
-                    </div>
-                    <div className="flex basis-full justify-center items-center backdrop-brightness-75">
-                        <p className="text-white lg:text-7xl text-6xl text-center drop-shadow">
-                            Welcome to {" "}
-                            <span className="font-bold">Registration Page</span>
-                        </p>
-                    </div>
-                </div>
+
             </div>
             <div className="flex flex-col w-full h-24 items-center bg-gray-950 text-white font-bold">
                 <span className="w-full h-4 mb-4 bg-gradient-to-r from-yellow-400 to-amber-600"></span>
