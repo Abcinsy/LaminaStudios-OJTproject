@@ -5,7 +5,7 @@
         "build": "vite build"
     },
     "devDependencies": {
-        "@inertiajs/react": "^1.0.0",
+        "@inertiajs/react": "^1.2.0",
         "@vitejs/plugin-react": "^3.0.0",
         "autoprefixer": "^10.4.14",
         "axios": "^1.1.2",
@@ -17,6 +17,7 @@
         "vite": "^4.5.3"
     },
     "dependencies": {
+        "@inertiajs/inertia": "^0.11.1",
         "@tailwindcss/aspect-ratio": "^0.4.2",
         "tw-elements": "^1.0.0-beta2"
     }

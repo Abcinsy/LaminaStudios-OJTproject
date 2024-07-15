@@ -72,19 +72,23 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/events', 'EventController@show')->name('events.show');
     Route::get('/blog/{id}', 'BlogController@show')->whereNumber('id');
 
-    Route::group(['middleware' => ['guest']], function () {
-        /**
-         * Register Routes
-         */
-        Route::get('/register', 'RegisterController@show')->name('register.show');
-        Route::post('/register', 'RegisterController@register')->name('register.perform');
-
-        /**
-         * Login Routes
-         */
-        Route::get('/login', 'LoginController@show')->name('login.show');
-        Route::post('/login', 'LoginController@login')->name('login.perform');
+    Route::get('/login', function () {
+        return Inertia::render('Login', [
+            'csrf_token' => csrf_token(),
+            'errors' => session('errors', new \Illuminate\Support\MessageBag()),
+        ]);
     });
+
+    Route::post('/admin/auth/login', [AuthController::class, 'login']);
+
+    Route::get('/register', function () {
+        return Inertia::render('Register', [
+            'csrf_token' => csrf_token(),
+            'errors' => session('errors', new \Illuminate\Support\MessageBag()),
+        ]);
+    });
+
+    Route::post('/register', [AuthController::class, 'register']);
 
     Route::group(['middleware' => ['auth']], function () {
         /**
