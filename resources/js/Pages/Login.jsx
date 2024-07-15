@@ -56,7 +56,6 @@ export default function Login({ csrf_token, errors }) {
             <div className="flex flex-row basis-full">
                 <div className="md:flex flex-col lg:w-2/3 md:w-1/2 hidden">
                     <div className="min-h-fit backdrop-brightness-50"></div>
-                    
                 </div>
 
                 <div className="flex flex-col lg:w-1/3 md:w-1/2 w-full sm:mx-36 md:mx-0 bg-brown gap-8 pt-12 px-10">
