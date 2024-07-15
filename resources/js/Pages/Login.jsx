@@ -50,23 +50,16 @@ export default function Login({ csrf_token, errors }) {
     return (
         <div
             className="flex flex-col w-full h-screen bg-cover bg-bottom"
-            style={{ backgroundImage: "url(../../Art/Warrior_Cathedral.jpg)" }}
+            style={{ backgroundImage: "url(../../Art/07.png)" }}
         >
             <Head title="Login" />
             <div className="flex flex-row basis-full">
                 <div className="md:flex flex-col lg:w-2/3 md:w-1/2 hidden">
                     <div className="min-h-fit backdrop-brightness-50"></div>
-                    <div className="flex basis-full justify-center items-center backdrop-brightness-75">
-                        <div className="bg-gray-950 bg-opacity-50 p-5 rounded-lg">
-                            <p className="text-neutral-50 lg:text-7xl font-bold text-6xl text-center drop-shadow font-sans">
-                                Welcome to the{" "}
-                                <span className="font-bold font-sans">Admin Panel</span>
-                            </p>
-                        </div>
-                    </div>
+                    
                 </div>
 
-                <div className="flex flex-col lg:w-1/3 md:w-1/2 w-full sm:mx-36 md:mx-0 bg-brown gap-8 pt-12">
+                <div className="flex flex-col lg:w-1/3 md:w-1/2 w-full sm:mx-36 md:mx-0 bg-brown gap-8 pt-12 px-10">
                     <img
                         src="/Art/lamina-logo.png"
                         alt="Lamina Studios Logo"
@@ -84,22 +77,21 @@ export default function Login({ csrf_token, errors }) {
                         <input type="hidden" name="_token" value={csrf_token} />
                         <div className="relative z-0 w-full mb-8">
                             <span className="absolute inset-y-0 left-0 flex items-center pl-2">
-                                <i className="bi bi-person-fill text-xl text-gray-700"></i>
                             </span>
                             <input
                                 type="text"
                                 id="username"
                                 name="username"
-                                className="font-sans block py-2.5 px-0 pl-8 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
+                                className="font-sans block py-2.5 px-0 pl-8 w-full text-lg text-gray-900 bg-transparent border border-white rounded-md-30 dark:text-white dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
                                 placeholder=" "
                                 value={form.username}
                                 onChange={handleChange}
                             />
                             <label
                                 htmlFor="username"
-                                className="font-sans absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 top-3 left-0 -z-10 origin-[0] peer-placeholder-shown:left-8 peer-focus:left-0 peer-focus:text-amber-600 peer-focus:dark:text-amber-500 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
+                                className="font-sans absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 top-3 left-0 -z-10 origin-[0] peer-placeholder-shown:left-8 peer-focus:left-0 peer-focus:text-amber-600 peer-focus:dark:text-amber-500 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
                             >
-                                Username
+                                Input your registered email
                             </label>
                             {formErrors.username && (
                                 <div className="text-red-500 text-sm mt-2">
@@ -109,7 +101,6 @@ export default function Login({ csrf_token, errors }) {
                         </div>
                         <div className="relative z-0 w-full mb-8">
                             <span className="absolute inset-y-0 left-0 flex items-center pl-2">
-                                <i className="bi bi-key-fill text-xl text-gray-700"></i>
                             </span>
                             <input
                                 type="password"
@@ -122,9 +113,9 @@ export default function Login({ csrf_token, errors }) {
                             />
                             <label
                                 htmlFor="password"
-                                className="font-sans absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 top-3 left-0 -z-10 origin-[0] peer-placeholder-shown:left-8 peer-focus:left-0 peer-focus:text-amber-600 peer-focus:dark:text-amber-500 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
+                                className="font-sans absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 top-3 left-0 -z-10 origin-[0] peer-placeholder-shown:left-8 peer-focus:left-0 peer-focus:text-amber-600 peer-focus:dark:text-amber-500 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-6"
                             >
-                                Password
+                                Input your password
                             </label>
                             {formErrors.password && (
                                 <div className="text-red-500 text-sm mt-2">
@@ -143,9 +134,10 @@ export default function Login({ csrf_token, errors }) {
                             />
                             <span className="text-white font-sans"> Remember me</span>
                         </label>
-                        <div className="text-center mt-4">
+                        <div className="text-center text-sm mt-4">
+                            <a href="#" className="text-white" > You’re new in here? </a>
                             <a href="#" className="text-amber-500 hover:underline font-sans" onClick={redirectToRegister}>
-                                Don't have an account? Register here
+                                 Create Account
                             </a>
                         </div>
                         <div className="flex flex-row justify-center mt-8">
