@@ -40,8 +40,7 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
-Route::group(['namespace' => 'App\Http\Controllers'], function()
-{
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
     // diretso sa route na render
     // Route::get('/about', function () {
     //     return Inertia::render('About', [
@@ -64,7 +63,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::inertia('/games/journeytovalhalla', 'Games/JourneyToValhalla');
     Route::get('/contact', 'ContactController@index')->name('contact');
     Route::get('/creatives', 'CreativeController@index')->name('creatives');
-    Route::get('/creatives/c/{name}', 'CreativeController@getCreative')->where('name', '[A-Za-z]+');;
+    Route::get('/creatives/c/{name}', 'CreativeController@getCreative')->where('name', '[A-Za-z]+');
 
     Route::get('/news/{id}', 'NewsController@show')->whereNumber('id');
     Route::get('/news', 'NewsController@index')->name('news');
@@ -89,6 +88,15 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     });
 
     Route::post('/register', [AuthController::class, 'register']);
+
+    Route::get('/application-form', function () {
+        return Inertia::render('Internship/ApplicationForm');
+    })->name('application.form');
+
+    Route::post('/application-form', function (Request $request) {
+        // Process the form submission here
+        return redirect()->back()->with('success', 'Application submitted successfully!');
+    })->name('application.form.submit');
 
     Route::group(['middleware' => ['auth']], function () {
         /**
