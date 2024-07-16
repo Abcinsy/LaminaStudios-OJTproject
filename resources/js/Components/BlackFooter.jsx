@@ -115,7 +115,7 @@ const BlackFooter = () => {
             </div>
 
             <div className="pt-10 flex justify-center">
-                <p className="text-white py-3 text-center text-lg uppercase text-sm">© 2024 Lamina Studios, LLC. All Rights Reserved.</p>
+                <p className="text-white py-3 text-center uppercase text-sm">© 2024 Lamina Studios, LLC. All Rights Reserved.</p>
             </div>
 
         </footer>
