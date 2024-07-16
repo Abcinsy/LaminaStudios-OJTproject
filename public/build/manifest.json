@@ -1,31 +1,31 @@
 {
-  "_tw-elements.es.min-8ab31ca5.js": {
-    "file": "assets/tw-elements.es.min-8ab31ca5.js"
+  "_tw-elements.es.min-519a0a22.js": {
+    "file": "assets/tw-elements.es.min-519a0a22.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-33e99237.css",
+    "file": "assets/app-491410b2.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app-1939a981.css",
+    "file": "assets/app-475d966e.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-afa9bc21.js",
+    "file": "assets/app-09486800.js",
     "imports": [
-      "_tw-elements.es.min-8ab31ca5.js"
+      "_tw-elements.es.min-519a0a22.js"
     ],
     "isEntry": true,
     "src": "resources/js/app.js"
   },
   "resources/js/app.jsx": {
     "css": [
-      "assets/app-1939a981.css"
+      "assets/app-475d966e.css"
     ],
-    "file": "assets/app-22e2c5e6.js",
+    "file": "assets/app-399c0488.js",
     "imports": [
-      "_tw-elements.es.min-8ab31ca5.js"
+      "_tw-elements.es.min-519a0a22.js"
     ],
     "isEntry": true,
     "src": "resources/js/app.jsx"
