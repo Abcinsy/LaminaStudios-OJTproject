@@ -11,14 +11,14 @@ export default function Internship() {
                     </div>
 
                     {/* Apply Now Button */}
-                    <div className="flex flex-row justify-center mt-16">
+                    <div className="flex flex-row justify-center mt-16 mb-20 ">
                         <button className='text-gray-950 text-center px-10 py-3 mx-10 uppercase text-base rounded-full bg-yellow-400 '>
                             APPLY NOW
                         </button>
                     </div>
 
                     {/* Photos */}
-                    <div className=' pt-40  w-4/5 mx-auto  flex flex-col gap-5 pb-44 '>
+                    <div className=' pt-40 w-4/5 mx-auto  flex flex-col gap-5 pb-44 '>
                         <h1 className='text-yellow-400 uppercase font-bold tracking-wide text-center text-5xl lg:text-7xl  '>Internship Photos</h1>
                         {/* <p className=' text-white text-center text-xl px-2 lg:px-64 font-extralight  '>Photo Credits: University of Santo Tomas - Legazpi City, Bicol University, SLTCFI</p> */}
 
