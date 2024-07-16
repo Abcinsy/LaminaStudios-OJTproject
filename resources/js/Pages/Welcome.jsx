@@ -23,7 +23,7 @@ export default function Welcome() {
         <div className="flex flex-row flex-wrap w-full min-h-fit overflow-hidden">
             <Head title="Welcome" />
             <Item image={"/Art/Warrior_Cathedral.jpg"} title="Home" link={'/home'} logo isHome />
-            <Item image={"/Art/07.png"} title="Log In" link={'/login'} />
+            <Item image={"/Art/07.png"} title="Login" link={'/register'} />
             <Item image={"/Art/10.png"} title="Games" link={'/games'} />
             <Item image={"/Art/Wizard%20Steam.png"} title="Creatives" link={'/creatives'} />
             <Item image={"/Art/06.png"} title="About Us" link={'/about-us'} />

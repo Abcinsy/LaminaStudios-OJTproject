@@ -2,19 +2,6 @@ import SiteLayout from "../../Layouts/SiteLayout";
 import { InertiaLink } from '@inertiajs/inertia-react'; // Import InertiaLink
 
 export default function Internship() {
-    // Example authentication status, replace with actual authentication check
-    const isAuthenticated = false; // Replace with your actual authentication check logic
-
-    const applyNowButton = isAuthenticated ? (
-        <InertiaLink href="/application" className='text-gray-950 text-center px-10 py-3 mx-10 uppercase text-base rounded-full bg-yellow-400'>
-            APPLY NOW
-        </InertiaLink>
-    ) : (
-        <InertiaLink href="/login" className='text-gray-950 text-center px-10 py-3 mx-10 uppercase text-base rounded-full bg-yellow-400'>
-            APPLY NOW
-        </InertiaLink>
-    );
-
     return (
         <SiteLayout title={'Internship'} backgroundImage={'Art/09.png'}>
             <div className="flex flex-col lg:px-16 md:px-10 relative overflow-x-clip">
@@ -26,9 +13,9 @@ export default function Internship() {
 
                     {/* Apply Now Button */}
                     <div className="flex flex-row justify-center mt-16 mb-20 ">
-                        <button className='text-gray-950 text-center px-10 py-3 mx-10 uppercase text-base rounded-full bg-yellow-400 '>
+                        <InertiaLink href="/application-form" className='text-gray-950 text-center px-10 py-3 mx-10 uppercase text-base rounded-full bg-yellow-400'>
                             APPLY NOW
-                        </button>
+                        </InertiaLink>
                     </div>
 
                     {/* Photos */}

@@ -53,8 +53,6 @@ const ApplicationForm = () => {
                             />
 
                             <div className="text-left text-black mb-2">
-                                <p className="mb-5 text-left text-xl font-bold font-display">
-                                    Hello, [username] </p>
                                 <p> Your journey begins here. <br /><br /></p>
                                 <p> At Lamina Studios, we believe in nurturing talent and providing hands-on experience that bridges the gap between academic learning and professional growth. We look forward to reviewing your application and potentially having you join our team. Embark on a journey of growth, learning, and professional development with Lamina Studios.
                                     <br /><br />

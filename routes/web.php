@@ -16,29 +16,25 @@ use Inertia\Inertia;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home.home');
-// })->name('home');
-
 Route::get('/partners', function () {
     return view('partners');
 })->name('partners');
 
-Route::get('/email/verify', function () {
-    return view('auth.verify-email');
-})->middleware(['auth', 'notVerified'])->name('verification.notice');
+Route::middleware(['auth'])->group(function () {
+    Route::middleware('notVerified')->get('/email/verify', function () {
+        return view('auth.verify-email');
+    })->name('verification.notice');
 
-Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-    $request->fulfill();
+    Route::middleware('signed')->get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+        $request->fulfill();
+        return redirect('/');
+    })->name('verification.verify');
 
-    return redirect('/');
-})->middleware(['auth', 'signed'])->name('verification.verify');
-
-Route::post('/email/verification-notification', function (Request $request) {
-    $request->user()->sendEmailVerificationNotification();
-
-    return back()->with('message', 'Verification link sent!');
-})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+    Route::post('/email/verification-notification', function (Request $request) {
+        $request->user()->sendEmailVerificationNotification();
+        return back()->with('message', 'Verification link sent!');
+    })->middleware('throttle:6,1')->name('verification.send');
+});
 
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     // diretso sa route na render
@@ -98,31 +94,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         return redirect()->back()->with('success', 'Application submitted successfully!');
     })->name('application.form.submit');
 
-
-    /**
-     * Admin Routes
-     * 
-     * Note: The following admin routes should ideally be inside the 'auth' middleware group for security reasons.
-     * However, they are currently placed outside for accessibility during development.
-     */
-    
-    Route::get('/admin', function () {
-        return view('admin.home');
-    })->name('admin.home');
-
-    Route::get('/admin/creatives', 'CreativeController@viewTable')->name('admin.table.creatives');
-    Route::get('/admin/creatives/add', 'CreativeController@form')->name('admin.creatives.form');
-    Route::post('/admin/creatives/add', 'CreativeController@addCreative')->name('admin.creatives.add');
-    Route::get('/admin/creatives/{id}', 'CreativeController@update')->name('admin.creatives.edit');
-    Route::post('/admin/creatives/update', 'CreativeController@update')->name('admin.creatives.update');
-    Route::post('/admin/creatives/delete', 'CreativeController@delete')->name('admin.creatives.delete');
-
-    Route::get('/admin/partners', 'PartnerController@viewTable')->name('admin.table.partners');
-    Route::get('/admin/partners/add', 'PartnerController@index')->name('admin.partners.form');
-    Route::post('/admin/partners/add', 'PartnerController@addPartner')->name('admin.partners.add');
-    Route::get('/admin/partners/{id}', 'PartnerController@update')->name('admin.partners.edit');
-    Route::post('/admin/partners/update', 'PartnerController@update')->name('admin.partners.update');
-    Route::post('/admin/partners/delete', 'PartnerController@delete')->name('admin.partners.delete');
+    Route::get('/admin/dashboard', function () {
+        return Inertia::render('Admin/AdminDashboard');
+    })->name('admin.dashboard');    
 
     Route::group(['middleware' => ['auth']], function () {
         /**

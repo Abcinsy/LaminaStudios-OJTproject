@@ -5,7 +5,6 @@ const BlackFooter = () => {
     // minimizing navbar size when not on top of page
     const [show, setShow] = useState(true)
 
-
     const handleScroll = () => {
 
         const height = (window.innerHeight + window.scrollY)
@@ -82,27 +81,27 @@ const BlackFooter = () => {
                     <div className="mt-5 mb-10 flex lg:flex-col lg:gap-y-2 lg:gap-x-0">
                     <a className="px-5 text-white flex items-center mb-3 lg:mb-0" href="http://Discord.com">
                             <i className="bi bi-discord text-white"></i>
-                            <p className="ml-2 lg:ml-0 lg:block text-white">Discord</p>
+                            <p className="ml-3 lg:ml-0 lg:block text-white">Discord</p>
                         </a>
 
                         <a className="px-5 text-white flex items-center mb-3 lg:mb-0" href="http://Facebook/laminastudios.official">
                             <i className="bi bi-facebook text-white"></i>
-                            <p className="ml-2 lg:ml-0 lg:block text-white">Facebook</p>
+                            <p className="ml-3 lg:ml-0 lg:block text-white">Facebook</p>
                         </a>
 
                         <a className="px-5 text-white flex items-center mb-3 lg:mb-0" href="http://Instagram.com/laminastudios">
                             <i className="bi bi-instagram text-white"></i>
-                            <p className="ml-2 lg:ml-0 lg:block text-white">Instagram</p>
+                            <p className="ml-3 lg:ml-0 lg:block text-white">Instagram</p>
                         </a>
 
                         <a className="px-5 text-white flex items-center mb-3 lg:mb-0" href="http://TikTok.com">
                             <i className="bi bi-tiktok text-white"></i>
-                            <p className="ml-2 lg:ml-0 lg:block text-white">TikTok</p>
+                            <p className="ml-3 lg:ml-0 lg:block text-white">TikTok</p>
                         </a>
 
                         <a className="px-5 text-white flex items-center mb-3 lg:mb-0" href="http://Twitter.com">
                             <i className="bi bi-twitter text-white"></i>
-                            <p className="ml-2 lg:ml-0 lg:block text-white">Twitter</p>
+                            <p className="ml-3 lg:ml-0 lg:block text-white">Twitter</p>
                         </a>
                     </div>
                 </div>
@@ -116,7 +115,7 @@ const BlackFooter = () => {
             </div>
 
             <div className="pt-10 flex justify-center">
-                <p className="text-white py-3 text-center text-lg uppercase text-sm">© 2022 Lamina Studios, LLC. All Rights Reserved.</p>
+                <p className="text-white py-3 text-center text-lg uppercase text-sm">© 2024 Lamina Studios, LLC. All Rights Reserved.</p>
             </div>
 
         </footer>
@@ -125,22 +124,3 @@ const BlackFooter = () => {
 }
 
 export default BlackFooter
-
-
-//   <footer className="">
-//   <div className="hidden lg:flex flex-col md:flex-row justify-around align-middle items-center uppercase font-bold whitespace-nowrap  ">
-//       <img src={"/Art/LS_newlogo.png"} alt='logo' width="100px" height="100px" className="invert " />
-//       <p className="my-10 text-amber-300 ">United States</p>
-//                 <div className="block lg:hidden  left-1/2 -ml-0.5 h-0.5 w-80  px-7 bg-gray-600"></div>
-//       <p className="  text-lg  ">
-//           © 2022 lamina studios, llc. all rights reserved.
-//       </p>
-//       <div >
-//           <a href="#" className="px-6 py-4 rounded-full bg-gray-600  hover:bg-gray-400  active:bg-gray-900 cursor-pointer">Terms and Conditions</a>
-//       </div>
-
-//       <div >
-//           <a href="#" className="px-6 py-4 rounded-full bg-gray-600  hover:bg-gray-400 active:bg-gray-900 cursor-pointer">Privacy Statement</a>
-//       </div>
-//   </div>
-// </footer>
