@@ -98,28 +98,36 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         return redirect()->back()->with('success', 'Application submitted successfully!');
     })->name('application.form.submit');
 
+
+    /**
+     * Admin Routes
+     * 
+     * Note: The following admin routes should ideally be inside the 'auth' middleware group for security reasons.
+     * However, they are currently placed outside for accessibility during development.
+     */
+    
+    Route::get('/admin', function () {
+        return view('admin.home');
+    })->name('admin.home');
+
+    Route::get('/admin/creatives', 'CreativeController@viewTable')->name('admin.table.creatives');
+    Route::get('/admin/creatives/add', 'CreativeController@form')->name('admin.creatives.form');
+    Route::post('/admin/creatives/add', 'CreativeController@addCreative')->name('admin.creatives.add');
+    Route::get('/admin/creatives/{id}', 'CreativeController@update')->name('admin.creatives.edit');
+    Route::post('/admin/creatives/update', 'CreativeController@update')->name('admin.creatives.update');
+    Route::post('/admin/creatives/delete', 'CreativeController@delete')->name('admin.creatives.delete');
+
+    Route::get('/admin/partners', 'PartnerController@viewTable')->name('admin.table.partners');
+    Route::get('/admin/partners/add', 'PartnerController@index')->name('admin.partners.form');
+    Route::post('/admin/partners/add', 'PartnerController@addPartner')->name('admin.partners.add');
+    Route::get('/admin/partners/{id}', 'PartnerController@update')->name('admin.partners.edit');
+    Route::post('/admin/partners/update', 'PartnerController@update')->name('admin.partners.update');
+    Route::post('/admin/partners/delete', 'PartnerController@delete')->name('admin.partners.delete');
+
     Route::group(['middleware' => ['auth']], function () {
         /**
          * Logout Routes
          */
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
-        // Route::get('/admin/creatives/add', 'CreativeController@form')->name('admin.creatives.form');
-        // Route::post('/admin/creatives/add', 'CreativeController@addCreative')->name('admin.creatives.add');
-        // Route::get('/admin/creatives/{id}', 'CreativeController@update')->name('admin.creatives.edit');
-        // Route::post('/admin/creatives/update', 'CreativeController@update')->name('admin.creatives.update');
-        // Route::post('/admin/creatives/delete', 'CreativeController@delete')->name('admin.creatives.delete');
-
-        // Route::get('/admin/partners/add', 'PartnerController@index')->name('admin.partners.form');
-        // Route::post('/admin/partners/add', 'PartnerController@addPartner')->name('admin.partners.add');
-        // Route::get('/admin/partners/{id}', 'PartnerController@update')->name('admin.partners.edit');
-        // Route::post('/admin/partners/update', 'PartnerController@update')->name('admin.partners.update');
-        // Route::post('/admin/partners/delete', 'PartnerController@delete')->name('admin.partners.delete');
-
-        // Route::get('/admin', function () {
-        //     return view('admin.home');
-        // })->name('admin.home');
-
-        // Route::get('/admin/creatives', 'CreativeController@viewTable')->name('admin.table.creatives');
-        // Route::get('/admin/partners', 'PartnerController@viewTable')->name('admin.table.partners');
     });
 });
