@@ -38,27 +38,28 @@ export default function Creatives({
                         </p>
                     </div>
                     <div className="flex px-32">
-                        <div className="flex flex-col basis-1/3 items-center">
-                            <img
-                                src={featuredCreative.image_name}
-                                alt={featuredCreative.name}
-                                className="w-96 h-96 bg-white border-4 border-[#fec200]"
-                            />
-                            <p className="text-[#fec200] text-3xl font-bold">
-                                {featuredCreative.name}
-                            </p>
-                            <p className="text-white text-xl">
-                                {featuredCreative.title}
-                            </p>
-                        </div>
+                        {featuredCreative && (
+                            <div className="flex flex-col basis-1/3 items-center">
+                                <img
+                                    src={featuredCreative.image_name}
+                                    alt={featuredCreative.name}
+                                    className="w-96 h-96 bg-white border-4 border-[#fec200]"
+                                />
+                                <p className="text-[#fec200] text-3xl font-bold">
+                                    {featuredCreative.name}
+                                </p>
+                                <p className="text-white text-xl">
+                                    {featuredCreative.title}
+                                </p>
+                            </div>
+                        )}
                         <div className="flex flex-wrap basis-2/3 p-32 pt-0 -mt-2 pr-0 justify-end">
-                            {featuredGallery.images.map((image, id) => (
-                                <div className="flex basis-1/2 p-2">
+                            {featuredGallery?.images.map((image, id) => (
+                                <div className="flex basis-1/2 p-2" key={id}>
                                     <img
                                         src={image.image_name}
                                         alt={image.name}
                                         className="basis-1/2 object-contain border-2 bg-gray-200 border-[#fec200]"
-                                        key={id}
                                     />
                                 </div>
                             ))}
@@ -92,42 +93,40 @@ export default function Creatives({
                         ))}
                     </div>
                 </div>
-
-                {/*set to hidden*/}
-            </SiteLayout>
-            {modalData ? (
-                <div
-                    className={
-                        "fixed left-0 top-0 h-full w-full backdrop-brightness-50 font-['Poppins'] " +
-                        (modalData ? "block" : "hidden")
-                    }
-                >
-                    <div className="flex fixed top-[50%] left-[50%] p-12 bg-white w-[75%] h-[70vh] translate-x-[-50%] translate-y-[-50%] rounded-3xl border-4 border-yellow-400">
-                        <div className="flex flex-col basis-1/3 items-center">
-                            <img
-                                src={modalData.image_name}
-                                alt={modalData.name}
-                                className="w-64 h-64 rounded-full"
-                            />
-                        </div>
-                        <div className="flex flex-col basis-2/3 gap-y-2">
-                            <p className="text-5xl font-bold">
-                                {modalData.name}
-                            </p>
-                            <p className="text-3xl">{modalData.title}</p>
-                            <div className="overflow-auto mt-2">
-                                <p className="text-base text-justify">
-                                    {modalData.description}
-                                </p>
+                {modalData && (
+                    <div
+                        className={
+                            "fixed left-0 top-0 h-full w-full backdrop-brightness-50 font-['Poppins'] " +
+                            (modalData ? "block" : "hidden")
+                        }
+                    >
+                        <div className="flex fixed top-[50%] left-[50%] p-12 bg-white w-[75%] h-[70vh] translate-x-[-50%] translate-y-[-50%] rounded-3xl border-4 border-yellow-400">
+                            <div className="flex flex-col basis-1/3 items-center">
+                                <img
+                                    src={modalData.image_name}
+                                    alt={modalData.name}
+                                    className="w-64 h-64 rounded-full"
+                                />
                             </div>
+                            <div className="flex flex-col basis-2/3 gap-y-2">
+                                <p className="text-5xl font-bold">
+                                    {modalData.name}
+                                </p>
+                                <p className="text-3xl">{modalData.title}</p>
+                                <div className="overflow-auto mt-2">
+                                    <p className="text-base text-justify">
+                                        {modalData.description}
+                                    </p>
+                                </div>
+                            </div>
+                            <i
+                                onClick={closeModal}
+                                className="bi bi-x-lg fixed top-4 right-4 text-6xl text-yellow-400"
+                            ></i>
                         </div>
-                        <i
-                            onClick={closeModal}
-                            className="bi bi-x-lg fixed top-4 right-4 text-6xl text-yellow-400"
-                        ></i>
                     </div>
-                </div>
-            ) : null}
+                )}
+            </SiteLayout>
         </>
     );
 }
