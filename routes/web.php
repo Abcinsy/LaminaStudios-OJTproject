@@ -40,16 +40,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
-    // diretso sa route na render
-    // Route::get('/about', function () {
-    //     return Inertia::render('About', [
-    //         'data' => 'whatever data'
-    //     ]);
-    // });
-
-    /**
-     * Home Routes
-     */
     Route::inertia('/', 'Welcome')->name('welcome');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/games', 'GameController@index')->name('games');
@@ -80,12 +70,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
     Route::post('/admin/auth/login', [AuthController::class, 'login']);
 
-    Route::get('/register', function () {
-        return Inertia::render('Register', [
-            'csrf_token' => csrf_token(),
-            'errors' => session('errors', new \Illuminate\Support\MessageBag()),
-        ]);
-    });
+    Route::get('/register', [AuthController::class, 'showRegisterForm']);
 
     Route::post('/register', [AuthController::class, 'register']);
 
@@ -98,14 +83,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         return redirect()->back()->with('success', 'Application submitted successfully!');
     })->name('application.form.submit');
 
-    Route::get('/admin/dashboard', function () {
+    Route::get('/admin', function () {
         return Inertia::render('Admin/AdminDashboard');
     })->name('admin.dashboard');
 
     Route::group(['middleware' => ['auth']], function () {
-        /**
-         * Logout Routes
-         */
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
     });
 });
