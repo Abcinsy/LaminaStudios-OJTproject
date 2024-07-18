@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 function AdminDashboard() {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <a className="navbar-brand ps-3" href="/admin">Admin Dashboard</a>
                 <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle">
                     <i className="fas fa-bars"></i>
@@ -32,9 +31,11 @@ function AdminDashboard() {
                 </ul>
             </nav>
 
-
+            <div style={{ marginTop: '70px' }}>
+                {/* The rest of your dashboard content goes here */}
+            </div>
         </div>
     );
 }
 
-ReactDOM.render(<AdminDashboard />, document.getElementById('app'));
+export default AdminDashboard;
