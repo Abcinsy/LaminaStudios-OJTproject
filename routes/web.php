@@ -120,3 +120,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         // Route::get('/admin/partners', 'PartnerController@viewTable')->name('admin.table.partners');
     });
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
