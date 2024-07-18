@@ -1,9 +1,12 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Inertia\Inertia;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,8 +67,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/news/{id}', 'NewsController@show')->whereNumber('id');
     Route::get('/news', 'NewsController@index')->name('news');
     Route::get('/initiatives', 'InitiativesController@show')->name('Initiatives.show');
-    Route::get('/events', 'EventController@show')->name('events.show');
+    //Route::get('/events', 'EventController@show')->name('events.show');
     Route::get('/blog/{id}', 'BlogController@show')->whereNumber('id');
+    Route::get('/events', [EventController::class, 'show']);
 
     Route::get('/login', function () {
         return Inertia::render('Login', [
@@ -96,7 +100,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
     Route::get('/admin/dashboard', function () {
         return Inertia::render('Admin/AdminDashboard');
-    })->name('admin.dashboard');    
+    })->name('admin.dashboard');
 
     Route::group(['middleware' => ['auth']], function () {
         /**

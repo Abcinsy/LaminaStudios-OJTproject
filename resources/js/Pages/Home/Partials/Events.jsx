@@ -1,48 +1,58 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Title from "../../../Components/Title";
 
-function Event({event, active, onClick}) {
+const sampleEvents = [
+    { image_name: 'img/amac.jpg', name: 'AMAC', blurb: 'This is Event 1', description: 'AMAC, hosted by Lamina Studios, is a dynamic event designed to foster creativity, innovation, and collaboration within the arts and media community.' },
+    { image_name: 'img/bicol.jpg', name: 'Level Up', blurb: 'This is Event 2', description: 'Level Up, facilitated by Lamina Studios and held at Bicol University College of Science, is an engaging event aimed at inspiring and equipping students with the skills and knowledge to excel in their academic and professional journeys. This event features a mix of keynote speeches, hands-on workshops, and interactive sessions led by experts from various fields.' },
+    { image_name: 'img/versus.jpg', name: 'Versus', blurb: 'This is Event 3', description: 'VERSUS, powered by IEEE and facilitated by Lamina Studios, is a competitive and educational event that challenges participants to push the boundaries of their technical and creative abilities. ' },
+];
+
+function Event({ event, active, onClick }) {
     return (
-        <div onClick={onClick} className={"flex-col min-h-[32rem] lg:basis-1/3 justify-center items-center " + (active ? 'flex' : 'brightness-75 opacity-70 lg:flex hidden')}>
-            <img className={`${active ? 'sm:w-96 w-full' : 'w-72'} lg:max-h-[32rem]  mb-4`} src={event.image_name} alt="event" />
+        <div onClick={onClick} className={"flex-col min-h-[32rem] lg:basis-1/3 justify-center items-center " + (active ? 'flex' : 'brightness-75 opacity-70 lg:flex hidden ')}>
+            <img className={`${active ? 'sm:w-96 w-full' : 'w-72 '} lg:max-h-[32rem] mb-4`} src={event.image_name || ''} alt="event" />
             {
                 active ? null : (
-                    <div className="flex flex-col justify-self-end">
-                        <p className="text-xl text-slate-100 font-bold text-center underline decoration-amber-500 decoration-2">{event.name}</p>
-                        <p className="text-lg text-slate-100 text-center">{event.blurb}</p>
+                    <div className="flex flex-col justify-self-end ">
+                        <p className="text-xl text-yellow-500 fontFamily-display  font-bold text-center underline decoration-amber-500 decoration-2">{event.name || 'Unnamed Event'}</p>
+                        <p className="text-lg text-yellow-500 fontFamily-display  text-center">{event.blurb || 'No blurb available'}</p>
                     </div>
                 )
             }
         </div>
-    )
+    );
 }
 
-export default function Events({ events }) {
-
+export default function Events() {
+    const [events, setEvents] = useState(sampleEvents);
     const [index, setIndex] = useState(0);
 
+    useEffect(() => {
+        console.log("Events data changed:", events);
+    }, [events]);
+
     const nextSlide = () => {
-        if(index === events.length - 1) {
+        if (index === events.length - 1) {
             setIndex(0);
-        }
-        else {
+        } else {
             setIndex(index + 1);
         }
-    }
+    };
 
     const prevSlide = () => {
-        if(index === 0) {
+        if (index === 0) {
             setIndex(events.length - 1);
-        }
-        else {
+        } else {
             setIndex(index - 1);
         }
-    }
+    };
 
     return (
         <div className="flex flex-col w-full min-h-screen sm:px-24 px-8 mt-16">
-            <Title>Events</Title>
-            <div className="relative flex w-full justify-center lg:min-h-[36rem]">
+           <h1 className="text-lamina-yellow font-bold text-5xl pb-4 mt-20 text-center">
+                    EVENTS
+                </h1>
+            <div className="relative flex w-full justify-center lg:min-h-[36rem] ">
                 <span onClick={prevSlide} className="absolute z-50 top-[50%] left-0 bg-gray-400/50 rounded-full w-12 h-12 flex justify-center items-center cursor-pointer">
                     <i className="bi bi-chevron-left text-3xl"></i>
                 </span>
@@ -54,11 +64,11 @@ export default function Events({ events }) {
                 </span>
             </div>
             <div className="flex flex-col justify-self-end">
-                <p className="text-xl text-slate-100 font-bold text-center underline decoration-amber-500 decoration-2">{events[index].name}</p>
-                <p className="text-lg text-slate-100 text-center">{events[index].blurb}</p>
+                <p className="text-xl text-yellow-500 fontFamily-display  font-bold text-center underline decoration-amber-500 decoration-2">{events[index].name || 'Unnamed Event'}</p>
+                <p className="text-lg text-yellow-500 fontFamily-display  text-center">{events[index].blurb || 'No blurb available'}</p>
             </div>
             <div className="flex w-full justify-center mt-4 text-lg text-white text-center">
-                {events[index].description}
+                {events[index].description || 'No description available'}
             </div>
         </div>
     );

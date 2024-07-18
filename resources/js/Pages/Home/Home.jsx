@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { usePage } from "@inertiajs/inertia-react";
 import SiteLayout from "../../Layouts/SiteLayout";
 import Events from "./Partials/Events";
 import PartnerStudios from "./Partials/PartnerStudios";
@@ -6,7 +7,6 @@ import PartnerStudios from "./Partials/PartnerStudios";
 export default function Home({ carousel, events, news, blogs, errors }) {
     console.log("Home Component Props:", { carousel, events, news, blogs, errors });
 
-    // Handle case where carousel might be null
     if (!carousel || !carousel.images) {
         return (
             <SiteLayout title={'Home'}>
@@ -16,7 +16,6 @@ export default function Home({ carousel, events, news, blogs, errors }) {
     }
 
     const slides = carousel.images;
-
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const prevSlide = () => {
