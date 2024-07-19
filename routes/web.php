@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Inertia\Inertia;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +60,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::inertia('/about-us', 'AboutUs/AboutUs');
     Route::inertia('/contact-us', 'Contact')->name('contact-us');
     Route::post('/contact-us', 'MessageController@store');
+    Route::inertia('/internship', 'Internship/Internship')->name('internship');
     Route::inertia('/games/dungeonsouls', 'Games/DungeonSouls');
     Route::inertia('/games/badbotsrise', 'Games/BadBotsRise');
     Route::inertia('/games/journeytovalhalla', 'Games/JourneyToValhalla');
@@ -71,18 +74,20 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/events', 'EventController@show')->name('events.show');
     Route::get('/blog/{id}', 'BlogController@show')->whereNumber('id');
 
-    Route::group(['middleware' => ['guest']], function () {
-        /**
-         * Register Routes
-         */
-        Route::get('/register', 'RegisterController@show')->name('register.show');
-        Route::post('/register', 'RegisterController@register')->name('register.perform');
+    Route::get('/application-form', function () {
+        return Inertia::render('Internship/ApplicationForm');
+    })->name('application.form');
 
-        /**
-         * Login Routes
-         */
-        Route::get('/login', 'LoginController@show')->name('login.show');
-        Route::post('/login', 'LoginController@login')->name('login.perform');
+    Route::post('/application-form', function (Request $request) {
+        // Process the form submission here
+        return redirect()->back()->with('success', 'Application submitted successfully!');
+    })->name('application.form.submit');
+
+    Route::group(['middleware' => ['guest']], function () {
+        Route::get('/register', [RegisterController::class, 'show'])->name('register.show');
+        Route::post('/register', [RegisterController::class, 'register'])->name('register.perform');
+        Route::get('/login', [LoginController::class, 'show'])->name('login.show');
+        Route::post('/login', [LoginController::class, 'login'])->name('login.perform');
     });
 
     Route::group(['middleware' => ['auth']], function () {
