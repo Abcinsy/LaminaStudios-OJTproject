@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SiteLayout from "../Layouts/SiteLayout";
 
 export default function Creatives({
@@ -8,6 +8,12 @@ export default function Creatives({
 }) {
     const [modalData, setModalData] = useState(null);
 
+    useEffect(() => {
+        console.log("Featured Creative:", featuredCreative);
+        console.log("Creatives:", creatives);
+        console.log("Featured Gallery:", featuredGallery);
+    }, [featuredCreative, creatives, featuredGallery]);
+
     const openModal = async (name) => {
         try {
             const res = await fetch(`/api/creatives/${name}`, {
@@ -16,7 +22,7 @@ export default function Creatives({
                 headers: { "Content-Type": "application/json" },
             });
             const data = await res.json();
-            console.log(data);
+            console.log("Modal Data:", data);
             setModalData(data);
         } catch (err) {
             console.log(err);
@@ -27,25 +33,25 @@ export default function Creatives({
 
     return (
         <>
-            <SiteLayout title={"Creatives"} backgroundImage={'Art/Wizard%20Steam.png'}>
+            <SiteLayout title={"Creatives"} backgroundImage={'/art/Wizard%20Steam.png'}>
                 <div className="flex flex-col w-full min-h-screen">
-                    <div className="w-full justify-center items-center text-center my-8 font-['Poppins']">
-                        <p className="text-[#fec200] text-6xl font-bold">
+                    <div className="w-full justify-center items-center text-center my-8">
+                        <p className="text-[#fec200] text-6xl font-bold font-display">
                             Featured Creatives
                         </p>
-                        <p className="text-white text-3xl font-base">
+                        <p className="text-white text-3xl font-base font-sans">
                             Artist of the Month.
                         </p>
                     </div>
-                    <div className="flex px-32">
+                    <div className="flex flex-col items-center px-32">
                         {featuredCreative && (
-                            <div className="flex flex-col basis-1/3 items-center">
+                            <div className="flex flex-col items-center">
                                 <img
                                     src={featuredCreative.image_name}
                                     alt={featuredCreative.name}
                                     className="w-96 h-96 bg-white border-4 border-[#fec200]"
                                 />
-                                <p className="text-[#fec200] text-3xl font-bold">
+                                <p className="text-[#fec200] text-3xl font-bold mt-4">
                                     {featuredCreative.name}
                                 </p>
                                 <p className="text-white text-xl">
@@ -65,11 +71,11 @@ export default function Creatives({
                             ))}
                         </div>
                     </div>
-                    <div className="w-full justify-center items-center text-center mt-8 font-['Poppins']">
-                        <p className="text-[#fec200] text-6xl font-bold">
+                    <div className="w-full justify-center items-center text-center mt-8">
+                        <p className="text-[#fec200] text-6xl font-bold font-display">
                             The Creatives
                         </p>
-                        <p className="text-white text-3xl font-base">
+                        <p className="text-white text-3xl font-base font-sans">
                             We value diversity.
                         </p>
                     </div>

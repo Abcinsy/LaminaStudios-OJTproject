@@ -12,7 +12,7 @@ class Creative extends Model
     protected $casts = [
         'links' => 'array'
     ];
-    
+
     protected $fillable = [
         'name',
         'title',

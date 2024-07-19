@@ -11,16 +11,22 @@ use Inertia\Inertia;
 class CreativeController extends Controller
 {
     public function index()
-        {
-            $featuredCreative = Creative::where('featured', true)->first();
-            $featuredGallery = Gallery::with('images')->where('featured', true)->first();
+    {
+        $featuredCreative = Creative::where('is_featured', true)->first();
+        $creatives = Creative::all()->map(function($creative) {
+            $creative->image_name = '/art/06.png'; // Update this path as necessary
+            return $creative;
+        });
 
-            return Inertia::render('Creatives', [
-                'creatives' => Creative::all(),
-                'featuredCreative' => $featuredCreative,
-                'featuredGallery' => $featuredGallery,
-            ]);
+        if ($featuredCreative) {
+            $featuredCreative->image_name = '/artist/pfp_artist.jpg'; // Update this path as necessary
         }
+
+        return Inertia::render('Creatives', [
+            'creatives' => $creatives,
+            'featuredCreative' => $featuredCreative,
+        ]);
+    }
 
     public function updateImage($id, Request $request)
     {
