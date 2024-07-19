@@ -58,7 +58,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::inertia('/about-us', 'AboutUs/AboutUs');
     Route::inertia('/contact-us', 'Contact')->name('contact-us');
     Route::post('/contact-us', 'MessageController@store');
-    Route::inertia('/internship', 'Internship/Internship')->name('contact-us');
     Route::inertia('/games/dungeonsouls', 'Games/DungeonSouls');
     Route::inertia('/games/badbotsrise', 'Games/BadBotsRise');
     Route::inertia('/games/journeytovalhalla', 'Games/JourneyToValhalla');
@@ -71,15 +70,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/initiatives', 'InitiativesController@show')->name('Initiatives.show');
     Route::get('/events', 'EventController@show')->name('events.show');
     Route::get('/blog/{id}', 'BlogController@show')->whereNumber('id');
-
-    Route::get('/application-form', function () {
-        return Inertia::render('Internship/ApplicationForm');
-    })->name('application.form');
-
-    Route::post('/application-form', function (Request $request) {
-        // Process the form submission here
-        return redirect()->back()->with('success', 'Application submitted successfully!');
-    })->name('application.form.submit');
 
     Route::group(['middleware' => ['guest']], function () {
         /**

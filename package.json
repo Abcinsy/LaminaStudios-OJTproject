@@ -11,8 +11,7 @@
         "postcss": "^8.4.23",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "tailwindcss": "^3.3.1",
-        "vite": "^4.5.3"
+        "tailwindcss": "^3.3.1"
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.11.1",
@@ -21,6 +20,7 @@
         "@vitejs/plugin-react": "^4.3.1",
         "laravel-vite-plugin": "^0.8.0",
         "react-router-dom": "^6.24.1",
-        "tw-elements": "^1.0.0-beta2"
+        "tw-elements": "^1.0.0-beta2",
+        "vite": "^4.5.3"
     }
 }
