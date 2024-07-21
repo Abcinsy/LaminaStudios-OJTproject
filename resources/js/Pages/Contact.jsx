@@ -21,14 +21,14 @@ export default function Contact() {
             style={{ backgroundImage: "url(../../Art/05.png)" }}
         >
             <div className="grid md:grid-cols-2 justify-center text-center items-center xs:grid-cols-1 ">
-                <div className=" md:grid justify-center  text-center min-h-[620px] bg-white md:h-screen">
+                <div className=" md:grid justify-center  text-center min-h-[620px] bg-brown md:h-screen">
                     <img
-                        src="art/LS_newlogo.png"
-                        className="w-52 mx-auto"
+                        src="art/lamina-logo.png"
+                        className="w-40 mx-auto my-auto"
                         alt=""
                     />
-                    <h1 className="xs:text-5xl xs:mr-4 md:mr-0 md:text-5xl font-bold my-4 ">
-                        Contact Us
+                    <h1 className="text-lamina-yellow font-display xs:text-5xl xs:mr-4 md:mr-0 md:text-5xl font-bold my-4 ">
+                        CONTACT US
                     </h1>
                     <div className="grid justify-center items-center ">
                         <form onSubmit={handleSubmit}>
@@ -110,11 +110,11 @@ export default function Contact() {
                             </div>
                         </form>
                     </div>
-                    <div className="grid">
-                        <button className="xs:mx-4 sm:mx-8 md:text-lg font-semibold border px-2 py-2 mx-12 bg-slate-400 hover:bg-slate-600 rounded-xl">
-                            Submit
-                        </button>
-                    </div>
+                    <div className="flex flex-row justify-center mt-5">
+                            <button className="bg-amber-300 w-full rounded-lg px-20 py-2 drop-shadow-lg font-bold font-sans text-black">
+                                Submit
+                            </button>
+                        </div>
                 </div>
             </div>
         </div>
