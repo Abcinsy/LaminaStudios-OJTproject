@@ -18,7 +18,7 @@ export default function Contact() {
     return (
         <div
             className="w-screen min-h-[621px] bg-right xs:bg-auto sm:bg-auto  lg:bg-auto  md:bg-auto   "
-            style={{ backgroundImage: "url(../../Art/05.png)" }}
+            style={{ backgroundImage: "url(../../Art/08.png)" }}
         >
             <div className="grid md:grid-cols-2 justify-center text-center items-center xs:grid-cols-1 ">
                 <div className=" md:grid justify-center  text-center min-h-[620px] bg-brown md:h-screen">
