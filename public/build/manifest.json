@@ -3,12 +3,12 @@
     "file": "assets/tw-elements.es.min-8ab31ca5.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-f4c774c4.css",
+    "file": "assets/app-9fa5b1f4.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app-95ede7ad.css",
+    "file": "assets/app-afffc42d.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
@@ -21,9 +21,9 @@
   },
   "resources/js/app.jsx": {
     "css": [
-      "assets/app-95ede7ad.css"
+      "assets/app-afffc42d.css"
     ],
-    "file": "assets/app-17e7e220.js",
+    "file": "assets/app-79a12e9e.js",
     "imports": [
       "_tw-elements.es.min-8ab31ca5.js"
     ],
