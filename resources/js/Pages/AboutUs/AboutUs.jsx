@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import SiteLayout from "../../Layouts/SiteLayout";
 import Initiatives from "./Partials/Initiatives";
 import Event from "./Partials/Event";
@@ -10,26 +11,52 @@ export default function AboutUs() {
         "In December. 2, 2016, Dungeon Souls final build was released and to this day, development continues with UX/UI redesign, improvement of controller layout, with a plan of DLC, and so much more for the year 2017."
     ];
 
+    const [currentParagraphIndex, setCurrentParagraphIndex] = useState(0);
+
+    const handlePrevClick = () => {
+        if (currentParagraphIndex > 0) {
+            setCurrentParagraphIndex(currentParagraphIndex - 1);
+        }
+    };
+
+    const handleNextClick = () => {
+        if (currentParagraphIndex < paragraphs.length - 1) {
+            setCurrentParagraphIndex(currentParagraphIndex + 1);
+        }
+    };
+
     return (
         <SiteLayout title={'About Us'} backgroundImage={'Art/06.png'}>
             {/* Hero Section */}
-            <div className="bg-palette bg-opacity-20 bg-cover">
-            <section className="hero-section relative h-screen">
-                <h1 className="font-display font-bold absolute right-8 bottom-30 text-6xl mb-2 text-lamina-yellow border-yellow-950">OUR STORY</h1>
-                <div className="absolute left-8 center-right top-20 w-90 h-auto px-3">
-                    <div className="text-right flex flex-col justify-between font-sans">
-                        {paragraphs.map((paragraph, index) => (
-                            <p key={index} className="text-xl text-white mb-4">
-                                {paragraph}
+                <section className="hero-section relative h-screen">
+                    <h1 className="font-display font-bold absolute right-8 text-7xl mb-2 mt-10 text-lamina-yellow border-yellow-950">OUR STORY</h1>
+                    <div className="absolute right-8 top-20 w-1/3 h-auto px-3">
+                        <div className="bg-palette bg-opacity-70 relative text-xl font-sans text-white mb-4 mt-12 p-4 rounded-lg h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-transparent scrollbar-track-transparent custom-scrollbar">
+                            <p className="text-justify font-manrope mb-4">
+                                {paragraphs[currentParagraphIndex]}
                             </p>
-                        ))}
+                            <div className="flex justify-between mt-4">
+                                <button
+                                    onClick={handlePrevClick}
+                                    className="bg-transparent text-white text-xl px-2 py-1 hover:bg-yellow-600 hover:text-black transition duration-300 ease-in-out"
+                                    disabled={currentParagraphIndex === 0}
+                                >
+                                    &larr;
+                                </button>
+                                <button
+                                    onClick={handleNextClick}
+                                    className="bg-transparent text-white text-xl px-2 py-1 hover:bg-yellow-600 hover:text-black transition duration-300 ease-in-out"
+                                    disabled={currentParagraphIndex === paragraphs.length - 1}
+                                >
+                                    &rarr;
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </section>
-            </div>
+                </section>
             {/* Initiatives Section */}
             <div className="relative overflow-x-clip bg-palette text-white">
-            <Initiatives />
+                <Initiatives />
             </div>
             <Event />
         </SiteLayout>

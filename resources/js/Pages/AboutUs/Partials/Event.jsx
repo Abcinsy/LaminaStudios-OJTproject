@@ -5,7 +5,7 @@ export default function Event() {
         <div className="bg-palette bg-opacity-20 ">
         <div className=' pt-32 w-4/5 mx-auto  flex flex-col gap-5 pb-44'>
         <h1 className='text-yellow-400 uppercase font-bold tracking-wide text-center text-5xl lg:text-7xl  '>Event Photos</h1>
-        <p className=' text-white text-center text-xl px-2 lg:px-64 font-extralight  '>Photo Credits: University of Santo Tomas - Legazpi City, Bicol University, SLTCFI</p>
+        <p className=' text-white text-center text-xl px-2 lg:px-64 font-manrope  '>Photo Credits: University of Santo Tomas - Legazpi City, Bicol University, SLTCFI</p>
 
         {/* photo grid */}
         <div className='flex flex-wrap  flex-col lg:flex-row  gap-y-2'>
@@ -30,7 +30,7 @@ export default function Event() {
         </div>
 
                 {/* Description */}
-                <div className="font-sans pt-12 w-4/5 lg:w-auto mx-auto flex flex-col gap-5">
+                <div className="font-manrope pt-12 w-4/5 lg:w-auto mx-auto flex flex-col gap-5">
                     <p className="text-white lg:text-justify tracking-wider text-l text-start ">
                         Jemarwen Baldon as well as Rommin Callos (aka Arcee), Lamina Studios University Ambassador goes to every university and college in Albay, Philippines. Lamina Studios were invited to several IT-related seminars or workshops.
                     </p>

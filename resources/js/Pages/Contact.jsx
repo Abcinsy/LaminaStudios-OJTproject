@@ -31,7 +31,7 @@ export default function Contact() {
                     </div>
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div className="relative">
-                            <label className="text-lamina-yellow text-sm mb-1 block font-sans">Name*</label>
+                            <label className="text-lamina-yellow text-sm mb-1 block font-manrope">Name*</label>
                             <input
                                 type="text"
                                 placeholder="Enter Name"
@@ -46,7 +46,7 @@ export default function Contact() {
                             />
                         </div>
                         <div className="relative">
-                            <label className="text-lamina-yellow text-sm mb-1 block font-sans">Email*</label>
+                            <label className="text-lamina-yellow text-sm mb-1 block font-manrope">Email*</label>
                             <input
                                 type="email"
                                 placeholder="Enter Email"
@@ -61,7 +61,7 @@ export default function Contact() {
                             />
                         </div>
                         <div className="relative">
-                            <label className="text-lamina-yellow text-sm mb-1 block font-sans">Inquiry*</label>
+                            <label className="text-lamina-yellow text-sm mb-1 block font-manrope">Inquiry*</label>
                             <select
                                 className="w-full px-4 py-2 rounded-lg bg-brown text-white border border-brown-600 focus:outline-none focus:border-lamina-yellow"
                                 value={form.inquiry}
@@ -79,7 +79,7 @@ export default function Contact() {
                             </select>
                         </div>
                         <div className="relative">
-                            <label className="text-lamina-yellow text-sm mb-1 block font-sans">Concern*</label>
+                            <label className="text-lamina-yellow text-sm mb-1 block font-manrope">Concern*</label>
                             <textarea
                                 placeholder="Enter Concern"
                                 className="w-full px-4 py-2 rounded-lg bg-brown text-white border border-brown-600 focus:outline-none focus:border-lamina-yellow"
@@ -94,7 +94,7 @@ export default function Contact() {
                         </div>
                         <button
                             type="submit"
-                            className="w-full py-2 rounded-lg bg-amber-300 text-black font-bold hover:bg-amber-400 focus:outline-none"
+                            className="w-full py-2 rounded-lg bg-amber-300 text-black font-bold font-manrope hover:bg-amber-400 focus:outline-none"
                         >
                             Submit
                         </button>

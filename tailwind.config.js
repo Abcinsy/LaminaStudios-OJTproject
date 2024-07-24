@@ -28,7 +28,7 @@ module.exports = {
         },
         fontFamily: {
           'display': ['Oswald'],
-          'sans': ['Manrope Regular'],
+          'manrope': ['Manrope'],
         }
       },
     },

@@ -14,8 +14,8 @@ function Event({ event, active, onClick }) {
             {
                 active ? null : (
                     <div className="flex flex-col justify-self-end ">
-                        <p className="text-xl text-yellow-500 fontFamily-display  font-bold text-center underline decoration-amber-500 decoration-2">{event.name || 'Unnamed Event'}</p>
-                        <p className="text-lg text-yellow-500 fontFamily-display  text-center">{event.blurb || 'No blurb available'}</p>
+                        <p className="text-xl text-yellow-500 fontFamily-display  font-manrope font-bold text-center underline decoration-amber-500 decoration-2">{event.name || 'Unnamed Event'}</p>
+                        <p className="text-lg text-yellow-500 fontFamily-display font-manrope text-center">{event.blurb || 'No blurb available'}</p>
                     </div>
                 )
             }
@@ -67,7 +67,7 @@ export default function Events() {
                 <p className="text-xl text-yellow-500 fontFamily-display  font-bold text-center underline decoration-amber-500 decoration-2">{events[index].name || 'Unnamed Event'}</p>
                 <p className="text-lg text-yellow-500 fontFamily-display  text-center">{events[index].blurb || 'No blurb available'}</p>
             </div>
-            <div className="flex w-full justify-center mt-4 text-lg text-white text-center">
+            <div className="flex w-full justify-center mt-4 text-lg text-white text-center font-manrope">
                 {events[index].description || 'No description available'}
             </div>
         </div>
