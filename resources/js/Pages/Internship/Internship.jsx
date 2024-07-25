@@ -97,6 +97,9 @@ export default function Internship() {
                             <div className='basis-1/3 px-1 aspect-square'>
                                 <img src="/images/internship-4.jpg" alt="" className='w-full h-full object-cover' />
                             </div>
+                            <div className='basis-1/3 px-1 aspect-square'>
+                                <img src="/images/internship-7.png" alt="" className='w-full h-full object-cover' />
+                            </div>
                         </div>
                     </div>
 
