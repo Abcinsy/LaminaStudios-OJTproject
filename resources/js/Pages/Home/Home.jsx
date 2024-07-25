@@ -43,10 +43,10 @@ export default function Home({ carousel, events, news, blogs, errors }) {
                         className="w-96"
                         alt="Lamina Logo"
                     />
-                    <p className="text-white text-center text-xl font-bold">
+                    <p className="text-white text-center text-xl font-bold font-manrope">
                         Developer and Creator of Dungeon Souls
                     </p>
-                    <p className="text-white text-center text-xl font-bold">
+                    <p className="text-white text-center text-xl font-bold font-manrope">
                         a Roguelike dungeon crawling action game available on Steam
                     </p>
                     <a

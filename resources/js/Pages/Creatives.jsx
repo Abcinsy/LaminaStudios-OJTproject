@@ -39,7 +39,7 @@ export default function Creatives({
                         <p className="text-[#fec200] text-6xl font-bold font-display">
                             Featured Creatives
                         </p>
-                        <p className="text-white text-3xl font-base font-sans">
+                        <p className="text-white text-3xl font-base font-manrope">
                             Artist of the Month.
                         </p>
                     </div>

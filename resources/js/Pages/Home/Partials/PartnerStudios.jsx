@@ -6,11 +6,11 @@ export default function PartnerStudios() {
 
         >
             <div className="flex flex-wrap justify-center ">
-                <h1 className="text-lamina-yellow font-bold text-5xl pb-4 mt-20 text-center">
+                <h1 className="text-lamina-yellow font-display font-bold text-5xl pb-4 mt-20 text-center">
                     PARTNER DEVS AND STUDIOS
                 </h1>
                 <div className="flex flex-col px-5 py-10 lg:px-44 md:px-10  relative overflow-x-clip">
-                    <p className="text-white text-center">
+                    <p className="text-white text-center font-manrope">
                         We believe that through collaborative efforts of every
                         team, we can produce innovative, creative and diverse
                         concepts or ideas.
@@ -58,7 +58,7 @@ export default function PartnerStudios() {
             </div>
 
             <div className="flex flex-wrap justify-center">
-                <h1 className="text-lamina-yellow font-bold text-5xl pb-2 mt-8 text-center">
+                <h1 className="text-lamina-yellow font-bold text-5xl pb-2 mt-8 text-center font-display">
                     INDUSTRY PARTNERS
                 </h1>
                 <div className="flex flex-col px-5 lg:px-44 md:px-10 relative overflow-x-clip">
