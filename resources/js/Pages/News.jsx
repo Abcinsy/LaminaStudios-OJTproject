@@ -34,7 +34,7 @@ function NewsCard({ article, type }) {
 
 export default function News({ news, blogs }) {
     return (
-        <SiteLayout title={'News and Features'} backgroundImage={'Art/08.png'}>
+        <SiteLayout title={'News and Features'} backgroundImage={'/Art/nightblade_study2.jpg'}>
             <div className="flex flex-col">
                 <Title>News</Title>
                 <div className="flex flex-wrap px-24">

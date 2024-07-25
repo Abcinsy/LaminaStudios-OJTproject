@@ -17,7 +17,7 @@ function GameCard({ link, backgroundImage, backgroundPos, children }) {
 
 export default function Games() {
     return (
-        <SiteLayout title={"Games"} backgroundImage={'Art/nightblade_study2.jpg'}>
+        <SiteLayout title={"Games"} backgroundImage={'/Art/10.png'}>
             <div className="flex w-full min-h-screen sm:px-24 px-8 justify-around">
                 <GameCard
                     backgroundImage={"/Art/Projects_Games.png"}

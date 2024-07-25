@@ -3,14 +3,14 @@ import SiteLayout from "../../Layouts/SiteLayout";
 import { InertiaLink } from '@inertiajs/inertia-react';
 
 const programs = [
-    { title: 'UI/UX Design', description: 'Utilize a Prototyping tool and other software tools to design a multiplatform web app', image: '/icons/uxui.svg' },
-    { title: 'Cybersecurity', description: 'Case Study Utilizing several technologies such as Virtualbox/VMWare, Kali Linux, Ubuntu, Wireshark, Nmap, Nessus', image: '/icons/cybersecurity.svg' },
-    { title: 'Web Development', description: 'Work on the company website with an admin panel for easy content updates or the logistics system for Thumbworx, built with Laravel and Vue.js', image: '/icons/webdev.svg' },
-    { title: 'Data Analytics', description: 'You will be tasked to utilize Data Organization tools and create diagrams such as ERD, UML, and others. Then later coordinate them with the developers', image: '/icons/data.svg' },
-    { title: 'Game Development', description: 'Choose from a variety of roles, including digital animation, game design, music/sound composition, and voice acting', image: '/icons/gamedev.svg' },
-    { title: 'IoT System Development', description: 'Continue working on the IoT dashboard following the current UI Design via Figma', image: '/icons/iot.svg' },
-    { title: 'Financial Management', description: 'Develop a model for a Financial Management System which involves learning about various financial management systems and understanding their significance across different industries', image: '/icons/finance.svg' },
-    { title: 'Network Administration', description: 'Learn to use Packet Tracer, Virtualbox/VMWare, MS Server, and other simulators. Gain skills in scripting with PowerShell, administering Linux and Windows systems', image: '/icons/network.svg' },
+    { title: 'UI/UX Design', description: 'Utilize a Prototyping tool and other software tools to design a multiplatform web app', icon: 'bi bi-palette' },
+    { title: 'Cybersecurity', description: 'Case Study Utilizing several technologies such as Virtualbox/VMWare, Kali Linux, Ubuntu, Wireshark, Nmap, Nessus', icon: 'bi bi-incognito' },
+    { title: 'Web Development', description: 'Work on the company website with an admin panel for easy content updates or the logistics system for Thumbworx, built with Laravel and Vue.js', icon: 'bi bi-laptop' },
+    { title: 'Data Analytics', description: 'You will be tasked to utilize Data Organization tools and create diagrams such as ERD, UML, and others. Then later coordinate them with the developers', icon: 'bi bi-briefcase' },
+    { title: 'Game Development', description: 'Choose from a variety of roles, including digital animation, game design, music/sound composition, and voice acting', icon: 'bi bi-joystick' },
+    { title: 'IoT System Development', description: 'Continue working on the IoT dashboard following the current UI Design via Figma', icon: 'bi bi-diagram-3' },
+    { title: 'Financial Management', description: 'Develop a model for a Financial Management System which involves learning about various financial management systems and understanding their significance across different industries', icon: 'bi bi-cash-coin' },
+    { title: 'Network Administration', description: 'Learn to use Packet Tracer, Virtualbox/VMWare, MS Server, and other simulators. Gain skills in scripting with PowerShell, administering Linux and Windows systems', icon: 'bi bi-hdd-network' },
 ];
 
 export default function Internship() {
@@ -54,12 +54,20 @@ export default function Internship() {
                             </button>
                             <div className='grid grid-cols-3 gap-10 flex-grow'>
                                 {programs.slice(currentIndex, currentIndex + 3).map((program, index) => (
-                                    <div key={index} className='flex flex-col bg-white p-5 rounded-lg shadow-lg' style={{ width: '100%', height: '400px' }}>
+                                    <div
+                                        key={index}
+                                        className='flex flex-col p-5 rounded-lg shadow-lg'
+                                        style={{
+                                            width: '100%',
+                                            height: '400px',
+                                            backgroundColor: 'rgba(22, 31, 43, 0.7)' // Adjust this color to match your palette
+                                        }}
+                                    >
                                         <div className='flex justify-center items-center flex-col h-full'>
-                                            <img src={program.image} alt={program.title} className='w-fit h-2/5 object-cover mb-4 text-sm rounded-md' />
+                                            <i className={`bi ${program.icon} text-8xl text-white my-7`}></i>
                                             <div className='flex flex-col flex-grow overflow-hidden'>
-                                                <h2 className='text-amber-400 text-xl text-center font-bold mb-2 truncate'>{program.title}</h2>
-                                                <p className='text-gray-700 text-sm text-center overflow-y-auto'>{program.description}</p>
+                                                <h2 className='text-amber-400 text-xl text-center font-bold mb-4 truncate'>{program.title}</h2>
+                                                <p className='text-white text-sm text-center overflow-y-auto'>{program.description}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -73,6 +81,8 @@ export default function Internship() {
                             </button>
                         </div>
                     </div>
+
+
 
 
                     {/* Internship Photos */}
