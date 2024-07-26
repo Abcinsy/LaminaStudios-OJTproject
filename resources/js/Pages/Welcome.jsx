@@ -1,11 +1,9 @@
 import { Head, Link } from "@inertiajs/react";
 
-function Item({ image, link, title, logo, isHome }) {
-    const basisClass = isHome ? "basis-2/3" : "basis-1/3";
-
+function Item({ image, link, title, logo, gridArea }) {
     return (
         <Link href={link ? link : '#'}
-            className={`group bg-cover bg-center min-h-[10rem] sm:h-[50vh] ${basisClass} transition-transform ease-in duration-300 hover:scale-110 hover:z-50 hover:cursor-pointer`}
+            className={`group bg-cover bg-center transition-transform ease-in duration-300 hover:scale-105 hover:z-50 hover:cursor-pointer ${gridArea}`}
             style={{ backgroundImage: `url('${image}')` }}
         >
             <div className="relative flex w-full h-full backdrop-brightness-75 hover:backdrop-brightness-100 justify-center items-center">
@@ -20,16 +18,17 @@ function Item({ image, link, title, logo, isHome }) {
 
 export default function Welcome() {
     return (
-        <div className="flex flex-row flex-wrap w-full min-h-fit overflow-hidden">
+        <div className="min-h-screen overflow-hidden">
             <Head title="Welcome" />
-            <Item image={"/Art/Warrior_Cathedral.jpg"} title="Home" link={'/home'} logo isHome />
-            <Item image={"/Art/07.png"} title="Login" link={'/login'} />
-            <Item image={"/Art/10.png"} title="Games" link={'/games'} />
-            <Item image={"/Art/Wizard%20Steam.png"} title="Creatives" link={'/creatives'} />
-            <Item image={"/Art/06.png"} title="About Us" link={'/about-us'} />
-            <Item image={"/Art/nightblade_study2.jpg"} title="News and Features" link={'/news'} />
-            <Item image={"/Art/08.png"} title="Contact Us" link={'/contact'} />
-            <Item image={"/Art/09.png"} title="Internship" link={'/internship'} />
+            <div className="grid grid-cols-3 grid-rows-3 w-full h-full" style={{ height: '100vh', wdith: '100vh' }}>
+                <Item image={"/Art/Warrior_Cathedral.jpg"} title="Home" link={'/home'} logo gridArea="col-span-2 row-span-1" />
+                <Item image={"/Art/06.png"} title="About Us" link={'/about-us'} gridArea="col-span-1 row-span-1" />
+                <Item image={"/Art/Wizard%20Steam.png"} title="Creatives" link={'/creatives'} gridArea="col-span-1 row-span-1" />
+                <Item image={"/Art/10.png"} title="Games" link={'/games'} gridArea="col-span-1 row-span-1" />
+                <Item image={"/Art/09.png"} title="Internship" link={'/internship'} gridArea="col-span-1 row-span-2" />
+                <Item image={"/Art/nightblade_study2.jpg"} title="News and Features" link={'/news'} gridArea="col-span-1 row-span-1" />
+                <Item image={"/Art/08.png"} title="Contact Us" link={'/contact'} gridArea="col-span-1 row-span-1" />
+            </div>
         </div>
     );
 }
