@@ -59,7 +59,7 @@ export default function AboutUs() {
                                     className="text-justify font-manrope mb-4 text-sm sm:text-base md:text-lg overflow-y-auto flex-grow"
                                     ref={textContainerRef}
                                 >
-                                    <p className='text-3xl font-bold mb-4'>
+                                    <p className='text-3xl font-bold mb-4 font-display'>
                                         OUR STORY
                                     </p>
                                     {isExpanded

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { usePage } from "@inertiajs/inertia-react";
+import React, { useState, useEffect } from "react";
 import SiteLayout from "../../Layouts/SiteLayout";
 import Events from "./Partials/Events";
 import PartnerStudios from "./Partials/PartnerStudios";
@@ -33,6 +32,14 @@ export default function Home({ carousel, events, news, blogs, errors }) {
     const goToSlide = (slideIndex) => {
         setCurrentIndex(slideIndex);
     };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextSlide();
+        }, 3000); // Change image every 3 seconds
+
+        return () => clearInterval(interval); // Cleanup interval on component unmount
+    }, [currentIndex]); // Add currentIndex as a dependency
 
     return (
         <SiteLayout title={'Home'}>
@@ -78,21 +85,6 @@ export default function Home({ carousel, events, news, blogs, errors }) {
                                 </div>
                             ))}
                         </div>
-                    </div>
-
-                    <div className="hover:opacity-50 group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-                        <i
-                            className="bi bi-arrow-left-circle-fill"
-                            onClick={prevSlide}
-                            size={30}
-                        />
-                    </div>
-                    <div className="hover:opacity-50 group-hover:block absolute top-[45%] -translate-x-0 translate-y-[50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-                        <i
-                            onClick={nextSlide}
-                            size={30}
-                            className="bi bi-arrow-right-circle-fill"
-                        />
                     </div>
                 </div>
             </div>

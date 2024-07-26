@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import Title from "../../../Components/Title";
 
 const sampleEvents = [
-    { image_name: 'img/amac.jpg', name: 'AMAC', blurb: 'This is Event 1', description: 'AMAC, hosted by Lamina Studios, is a dynamic event designed to foster creativity, innovation, and collaboration within the arts and media community.' },
-    { image_name: 'img/bicol.jpg', name: 'Level Up', blurb: 'This is Event 2', description: 'Level Up, facilitated by Lamina Studios and held at Bicol University College of Science, is an engaging event aimed at inspiring and equipping students with the skills and knowledge to excel in their academic and professional journeys. This event features a mix of keynote speeches, hands-on workshops, and interactive sessions led by experts from various fields.' },
+    { image_name: 'img/amac.jpg', name: 'AMAC', blurb: 'Albay Multimedia Arts Convention', description: 'AMAC, hosted by Lamina Studios, is a dynamic event designed to foster creativity, innovation, and collaboration within the arts and media community.' },
+    { image_name: 'img/bicol.jpg', name: 'Level Up', blurb: 'Indie Games Trends and Innovations', description: 'Level Up, facilitated by Lamina Studios and held at Bicol University College of Science, is an engaging event aimed at inspiring and equipping students with the skills and knowledge to excel in their academic and professional journeys. This event features a mix of keynote speeches, hands-on workshops, and interactive sessions led by experts from various fields.' },
     { image_name: 'img/versus.jpg', name: 'Versus', blurb: 'This is Event 3', description: 'VERSUS, powered by IEEE and facilitated by Lamina Studios, is a competitive and educational event that challenges participants to push the boundaries of their technical and creative abilities. ' },
 ];
 
@@ -14,8 +14,8 @@ function Event({ event, active, onClick }) {
             {
                 active ? null : (
                     <div className="flex flex-col justify-self-end ">
-                        <p className="text-xl text-yellow-500 fontFamily-display  font-manrope font-bold text-center underline decoration-amber-500 decoration-2">{event.name || 'Unnamed Event'}</p>
-                        <p className="text-lg text-yellow-500 fontFamily-display font-manrope text-center">{event.blurb || 'No blurb available'}</p>
+                        <p className="text-xl text-yellow-500 font-display font-bold text-center">{event.name || 'Unnamed Event'}</p>
+                        <p className="text-lg text-yellow-500 fontFamily-display font-bold text-center">{event.blurb || 'No blurb available'}</p>
                     </div>
                 )
             }
@@ -53,21 +53,21 @@ export default function Events() {
                     EVENTS
                 </h1>
             <div className="relative flex w-full justify-center lg:min-h-[36rem] ">
-                <span onClick={prevSlide} className="absolute z-50 top-[50%] left-0 bg-gray-400/50 rounded-full w-12 h-12 flex justify-center items-center cursor-pointer">
-                    <i className="bi bi-chevron-left text-3xl"></i>
+                <span onClick={prevSlide} className="absolute z-50 top-[50%] left-0 bg-white/50 rounded-full w-12 h-12 flex justify-center items-center cursor-pointer">
+                    <i className="bi bi-caret-left-fill text-3xl"></i>
                 </span>
                 <Event onClick={prevSlide} event={events[index === 0 ? events.length - 1 : index - 1]} />
                 <Event event={events[index]} active={true} />
                 <Event onClick={nextSlide} event={events[index === events.length - 1 ? 0 : index + 1]} />
-                <span onClick={nextSlide} className="absolute z-50 top-[50%] right-0 bg-gray-400/50 rounded-full w-12 h-12 flex justify-center items-center cursor-pointer">
-                    <i className="bi bi-chevron-right text-3xl"></i>
+                <span onClick={nextSlide} className="absolute z-50 top-[50%] right-0 bg-white/50 rounded-full w-12 h-12 flex justify-center items-center cursor-pointer">
+                    <i className="bi bi-caret-right-fill text-3xl"></i>
                 </span>
             </div>
             <div className="flex flex-col justify-self-end">
-                <p className="text-xl text-yellow-500 fontFamily-display  font-bold text-center underline decoration-amber-500 decoration-2">{events[index].name || 'Unnamed Event'}</p>
-                <p className="text-lg text-yellow-500 fontFamily-display  text-center">{events[index].blurb || 'No blurb available'}</p>
+                <p className="text-3xl text-yellow-500 font-display font-bold text-center">{events[index].name || 'Unnamed Event'}</p>
+                <p className="text-lg text-yellow-500 fontFamily-display font-bold text-center">{events[index].blurb || 'No blurb available'}</p>
             </div>
-            <div className="flex w-full justify-center mt-4 text-lg text-white text-center font-manrope">
+            <div className="flex justify-center mt-4 mx-32 text-lg text-white text-center font-manrope">
                 {events[index].description || 'No description available'}
             </div>
         </div>
